@@ -8,7 +8,7 @@ html{
 }
 body{
     width: 100%;
-    height: 100vh;
+    min-height: 200vh;
     overflow: hidden;
     background: linear-gradient(135deg, #020617, #0f172a,#001d3d,#000814);
 }
@@ -30,9 +30,9 @@ nav{
     text-decoration: none;
 }
 .logo img{
-    height: 50px;
+    height: 60px;
     width: auto;
-    filter: drop-shadow(0 0 8px rgba(0, 149, 255, 0.8))
+   filter: drop-shadow(0 0 8px rgba(0, 149, 255, 0.8))
             drop-shadow(0 0 15px rgba(138, 43, 226, 0.6));
     transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -148,7 +148,7 @@ nav{
     transition: 0.3s linear;
 }
 .type-ecriture span::before{
-    content: "Developer";
+    content: "Frontend Developer";
     animation: words 15s infinite;
 }
 .type-ecriture span::after{
@@ -166,7 +166,7 @@ nav{
 }
 @keyframes words {
     0%,33%{
-        content: "Developer";
+        content: "Frontend Developer";
     }
     34%,66%{
         content: "Desagner";
@@ -179,4 +179,97 @@ nav{
     font-size: clamp(0,4rem,0.2rem + 9vw, 1rem);
     margin: 10px 0;
     color: #FFFFFF;
+}
+@media (max-width:884px){
+    body{
+        overflow-y: visible;
+    }
+    nav .logo{
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        font-size: 1.5rem;
+    }
+
+    .main-conteneur{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-conteneur .links{
+        display: none;
+    }
+
+    .hamburg, .cancel{
+        display: block;
+    }
+    .main-conteneur{
+        width: 80%;
+    }
+    .hamburg{
+        color: #000814;
+    }
+    .main-conteneur .image{
+        width: 80%;
+        margin-bottom: 0px;
+    }
+}
+/* SECTION SKILLS */
+.Skills{
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+.title{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+.title .voir{
+    color: #4edbfa;
+}
+.skills-boîte{
+    width: 100%;
+    text-align: left;
+}
+.skill-titre{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    color: #FFFFFF;
+}
+.skills-contenus{
+    background-color: #1f1f1f;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+}
+.skills-parti{
+    margin-bottom: 2.5rem;
+    display: block;
+
+}
+.skills-parti:last-child{
+    margin-bottom: 0;
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+    color: #e0e0e0;
+    font-weight: 500;
+}
+.progress-bar{
+    width: 100%;
+    height: 10px;
+    background-color: #111111;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.progress-line{
+    height: 100%;
+    background-color: #4edbfa;
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
 }
