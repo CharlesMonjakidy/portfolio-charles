@@ -10,7 +10,7 @@ body{
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background: linear-gradient(to right,rgb(255,255,255),rgb(254,215,173));
+    background: linear-gradient(135deg, #020617, #0f172a,#001d3d,#000814);
 }
 nav{
     width: 100%;
@@ -25,13 +25,16 @@ nav{
     align-items: center;
 }
 .logo{
-    color: #333;
-    font-weight: bolder;
-    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
-.logo span{
-    color: rgb(109, 67, 0);
-    text-shadow: 0 0 15px rgb(109, 67, 0);
+.logo img{
+    height: 50px;
+    width: auto;
+    filter: drop-shadow(0 0 8px rgba(0, 149, 255, 0.8))
+            drop-shadow(0 0 15px rgba(138, 43, 226, 0.6));
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 .hamburg, .cancel{
     cursor: pointer;
@@ -40,22 +43,22 @@ nav{
     top: 10px;
     font-size: 2rem;
     display: none;
-    color: black;
+    color: #FFFFFF;
 }
 .nav-conteneur .links{
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
     align-items: center;
 }
 .nav-conteneur .links a{
     position: relative;
     font-size: 1.2rem;
-    color: black;
+    color: #FFFFFF;
     text-decoration: none;
     font-weight: 500;
     transform: 0.3s linear;
 }
-.nav-conteneur .links a:hover{
+.nav-conteneur .links a::before{
     position: absolute;
     width: 100%;
     height: 3px;
@@ -64,6 +67,20 @@ nav{
     bottom: -3px;
     background-color: ;
     transition: 0.2s linear;
+}
+.btn-contact {
+    background-color: transparent;
+    padding: 5px 20px;
+    border: 2px solid #3B82E6;
+    border-radius: 20px;
+}
+.nav-conteneur .btn-contact a{
+    color: #1E1B4B;
+    transition: 0.3s linear;
+}
+.nav-conteneur .btn-contact a:hover .nav-conteneur:hover a{
+    color: #1E1B4B;
+    background-color: #3B82E6;
 }
 .dropdown{
     top: 0;
@@ -86,5 +103,80 @@ nav{
     transition: 0.2s linear;
 }
 .dropdown .links a:hover{
-    background-color: rgb(109, 67, 0);
+    background-color: #3B82E6;
+}
+.main-conteneur{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+    padding: 80px 10px;
+    flex-direction: row-reverse;
+}
+.image{
+    width: 350px;
+    height: 350px;
+    border-radius: 45% 55% 60% 40%;
+    overflow: hidden;
+    border: 1px solid #00bfff;
+    box-shadow: 0 0 25px #00bfff;
+}
+.main-conteneur .image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 45% 55% 60% 40%;
+    object-fit: cover;
+}
+.main-texte h1{
+    color: white;
+    font-size: clamp(1rem,2rem + 5vw, 3rem);
+}
+.main-texte h1 span{
+    color: #00bfff;
+    text-shadow: 0 0 10px #00bfff;
+}
+.type-ecriture{
+    font-weight: 500;
+    font-size: clamp(1rem,1rem + 5vw, 3rem);
+    display: inline-block;
+}
+.type-ecriture span{
+    color: #00bfff;
+    font-size: 2.5rem;
+    text-shadow: 0 0 5px #00bfff;
+    position: relative;
+    transition: 0.3s linear;
+}
+.type-ecriture span::before{
+    content: "Developer";
+    animation: words 15s infinite;
+}
+.type-ecriture span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    animation: cursor 0.6s linear infinite;
+}
+@keyframes cursor{
+    top{
+        border-left: 3px solid #4b1b1b;
+    }
+}
+@keyframes words {
+    0%,33%{
+        content: "Developer";
+    }
+    34%,66%{
+        content: "Desagner";
+    }
+    67%,100%{
+        content: "Engeineer AI";
+    }
+}
+.main-texte p{
+    font-size: clamp(0,4rem,0.2rem + 9vw, 1rem);
+    margin: 10px 0;
+    color: #FFFFFF;
 }
