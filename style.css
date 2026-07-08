@@ -66,7 +66,6 @@ nav{
     left: 0;
     content: "";
     bottom: -3px;
-    background-color: ;
     transition: 0.2s linear;
 }
 .btn-contact {
@@ -222,6 +221,10 @@ nav{
     border-left: 3px solid black;
     animation: cursor 0.6s linear infinite;
 }
+.type-ecriture h2{
+    font-size: 2rem;
+    color: #FFFFFF;
+}
 
 @keyframes cursor{
     top{
@@ -272,12 +275,47 @@ nav{
         width: 80%;
     }
     .hamburg{
-        color: #000814;
+        color: #FFFFFF;
     }
     .main-conteneur .image{
         width: 80%;
         margin-bottom: 0px;
     }
+}
+.social-icons{
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    margin-right: auto;
+    flex-direction: row;
+    width: 100%;
+}
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #00A2E8;
+    border-radius: 50%;
+    font-size: 24px;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    color: black;
+}
+.social-icons a i {
+    color: black;
+    font-size: 22px;
+    line-height: 1;
+}
+.social-icons a:hover{
+    background: #00A2E8;
+    box-shadow: 0 0 15px #00A2E8;
+    transform: translateY(-5px);
+}
+.social-icons a:hover i{
+    color: black;
 }
 /* SECTION SKILLS */
 .Skills{
